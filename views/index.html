@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Solark</title>
+
+    <link rel="stylesheet" href="./styles/desktop.css">
+</head>
+<body class="desktop">
+    <section id="menuBar">
+        <nav class="sideNav">
+            <ul>
+                <li class="sideNavActive" id="newProject"><a href="#">NEW PROJECT</a></li>
+                <li id="savedProject"><a href="#">SAVED PROJECTS</a></li>
+                <li id="help"><a href="#">HELP</a></li>
+                <li id="about"><a href="#">ABOUT</a></li>
+            </ul>
+        </nav>
+
+    </section>
+
+    <section id="displayArea">
+        <div id="newProjectDisplay">
+
+        </div>
+
+        <div id="savedProjectDisplay">
+
+        </div>
+
+        <div id="helpDisplay">
+
+        </div>
+
+        <div id="aboutDisplay">
+
+        </div>
+
+    </section>
+    
+
+    <script type="module">
+        require('../renderer.js')
+        require('../controllers/sideNavController.js')
+    </script>
+</body>
+</html>
