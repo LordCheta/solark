@@ -44,3 +44,12 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
+#savedProjectDisplay{
+    display: none;
+}
+#helpDisplay{
+    display: none;
+}
+#aboutDisplay{
+    display: none;
+}
