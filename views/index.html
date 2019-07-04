@@ -7,6 +7,7 @@
     <title>Solark</title>
 
     <link rel="stylesheet" href="./styles/desktop.css">
+    <link rel="stylesheet" href="./styles/newProjectDisplay.css">
 </head>
 <body class="desktop">
     <section id="menuBar">
@@ -23,7 +24,32 @@
 
     <section id="displayArea">
         <div id="newProjectDisplay">
-            <p>newProjectDisplay</p>
+            <div id="selectView">
+                <div class="selectViewHeader">
+                    <h2 class="svH">APPLIANCES</h2>
+                    <p class="svP">create and modify appliances</p>
+                </div>
+
+                <!-- <div  class="selectViewHeader">
+                    <h2>APPLIANCES</h2>
+                    <p>create and modify appliances</p>
+                </div>
+
+                <div class="selectViewHeader">
+                    <h2>APPLIANCES</h2>
+                    <p>create and modify appliances</p>
+                </div> -->
+
+                <button class="svBtns">Appliances</button>
+                <!-- <button class="svBtns">Panel</button>
+                <button class="svBtns">Battery</button>
+                <button class="svBtns">Controller</button> -->
+
+            </div>
+
+            <div id="listView">
+
+            </div>
         </div>
 
         <div id="savedProjectDisplay">
@@ -44,6 +70,7 @@
     <script type="module">
         require('../renderer.js')
         require('../controllers/sideNavController.js')
+        require('../controllers/newProjectController.js')
     </script>
 </body>
 </html>

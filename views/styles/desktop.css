@@ -12,6 +12,7 @@
     background-color: #339933;
     color: #fff;
     height: 650px;
+    z-index: 9
 }
 .sideNav{
     text-align: justify;
@@ -39,10 +40,11 @@
 }
 #displayArea{
     grid-column: 2 / span 1;
+    /* height: 650px; */
 }
 #newProjectDisplay{
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 1fr;
 }
 #savedProjectDisplay{
     display: none;
