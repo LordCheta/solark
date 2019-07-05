@@ -17,7 +17,7 @@ module.exports = class Solark {
   }
   calulateBatteryParameters (depthOfDischarge, autonomousDays, unitBatteryCapacity, unitBatteryVoltage) {
     this.batteryDischarge = Number((this.consumerEnergyDemand / this.systemVoltage).toFixed(2));
-    this.batteryCapacity = Number(((this.batteryDischarge * autonomousDays) / depthOfDischarge).toFixed(2));
+    this.batteryCapacity = Number(((this.batteryDischarge * autonomousDays) / (depthOfDischarge / 100)).toFixed(2));
     this.noOfBatteriesinSeries = Number((this.systemVoltage / unitBatteryVoltage).toFixed(2));
     this.noOfBatteriesinParallel = Number((this.batteryCapacity / unitBatteryCapacity).toFixed(2));
     this.noOfBatteriesNeeded = Number((this.noOfBatteriesinParallel * this.noOfBatteriesinSeries).toFixed(2));

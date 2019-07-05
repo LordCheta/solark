@@ -31,6 +31,6 @@ appliances = getUpdatedAppliances(appliances);
 */
 
 const adminBlockA = new Solark(appliances, 240, 4.71);
-adminBlockA.calculateParameters(0.5, 3, 200, 12, 280, 35.5, 24, 50)
+adminBlockA.calculateParameters(50, 3, 200, 12, 280, 35.5, 24, 50)
 const solarReportObj = adminBlockA.generateReport();
 console.log(solarReportObj);
