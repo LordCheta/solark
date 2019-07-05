@@ -113,7 +113,7 @@ let createWindow = () => {
         slashes: true
     }));
 
-    // mainWindow.webContents.toggleDevTools();
+    mainWindow.webContents.toggleDevTools();
 
   
 

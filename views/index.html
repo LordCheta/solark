@@ -25,25 +25,78 @@
     <section id="displayArea">
         <div id="newProjectDisplay">
             <div id="selectView">
-                <div class="selectViewHeader">
+                <div id="applianceHeader" class="selectViewHeader activeHeader">
                     <h2 class="svH">APPLIANCES</h2>
                     <p class="svP">create and modify appliances</p>
                 </div>
 
-                <!-- <div  class="selectViewHeader">
-                    <h2>APPLIANCES</h2>
-                    <p>create and modify appliances</p>
+                <div id="panelHeader" class="selectViewHeader">
+                    <h2 class="svH">PANEL</h2>
+                    <p class="svP">set panel parameters</p>
                 </div>
 
-                <div class="selectViewHeader">
-                    <h2>APPLIANCES</h2>
-                    <p>create and modify appliances</p>
-                </div> -->
+                <div id="batteryHeader" class="selectViewHeader">
+                    <h2 class="svH">BATTERY</h2>
+                    <p class="svP">choose battery parameters</p>
+                </div>
 
-                <button class="svBtns">Appliances</button>
-                <!-- <button class="svBtns">Panel</button>
-                <button class="svBtns">Battery</button>
-                <button class="svBtns">Controller</button> -->
+                <div id="controllerHeader" class="selectViewHeader">
+                    <h2 class="svH">Controller</h2>
+                    <p class="svP">system and charge controller settings</p>
+                </div>
+
+                <button id="applianceBtn" class="svBtns activeBtn">Appliances</button>
+                <button id="panelBtn" class="svBtns">Panel</button>
+                <button id="batteryBtn" class="svBtns">Battery</button>
+                <button id="controllerBtn" class="svBtns">Controller</button>
+
+                <div id="applianceContent">
+                    <form action="">
+                        <div class="field">
+                          <input type="text" name="applianceName" id="applianceName" placeholder="Electric Cooker">
+                          <label for="applianceName">Appliance Name</label>
+                        </div>
+                        
+                        <div class="field">
+                            <input type="number" name="applianceQty" id="applianceQty" placeholder="10">
+                            <label for="applianceQty">Appliance Quantity</label>
+                        </div>
+
+                        <div class="field">
+                            <input type="number" name="applianceRating" id="applianceRating" placeholder="2">
+                            <label for="applianceRating">Appliance Rating</label>
+                        </div>
+
+                        <div class="custom-select field" style="width:200px">
+                            <select name="ratingUnit" id="ratingUnit">
+                                <option value="W">Watts</option>
+                                <option value="Hp">Horse Power</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <input type="number" name="hourOfUsage" id="hourOfUsage" placeholder="9">
+                            <label for="hourOfUsage">Hour Of Usage</label>
+                        </div>
+
+                        <div class="field">
+                            <input type="number" list="powerFactor" name="powerFactor" id="powerFactor" placeholder="0.8">
+                            <label for="powerFactor">Power Factor Rating</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="panelContent">
+                    <p>yippee11</p>
+                </div>
+
+                <div id="batteryContent">
+                    <p>yippee222</p>
+                </div>
+
+                <div id="controllerContent">
+                    <p>yippee333</p>
+                </div>
 
             </div>
 
@@ -71,6 +124,7 @@
         require('../renderer.js')
         require('../controllers/sideNavController.js')
         require('../controllers/newProjectController.js')
+        require('../controllers/generateReportController.js')
     </script>
 </body>
 </html>
