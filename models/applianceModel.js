@@ -1,11 +1,11 @@
 
-const appliances = [];
+let appliancesArray = [];
 
-exports = getAppliances = () => {
-  return appliances;
+let getAppliances = () => {
+  return appliancesArray;
 }
 
-module.exports = class Appliance {
+class Appliance {
   constructor(...appliance){
     if (appliance.length !== 0) {
       [this.name, this.quantity, this.powerRating, this.powerRatingUnit, this.hourOfUsage, this.powerFactor] = appliance;
@@ -22,4 +22,13 @@ module.exports = class Appliance {
   addToAppliances () {
     appliances.push(this.applianceObj);
   }
+}
+
+let text = "Amazing stuff really"
+
+module.exports = {
+  appliancesArray,
+  getAppliances,
+  Appliance,
+  text
 }

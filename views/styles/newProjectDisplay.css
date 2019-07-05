@@ -175,8 +175,21 @@ form {
   #hourOfUsage{
     width: 200px;
   }
+  .hou{
+    position: relative;
+    top: -50px;
+  }
   #powerFactor{
     width: 200px;
+  }
+  .pf{
+    position: relative;
+    top: -50px;
+  }
+  .custom-select{
+    position: relative;
+    top: -50px;
+    left: 50%;
   }
 select{
     width: 200px;
@@ -189,5 +202,51 @@ select{
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
     box-shadow: 0 0 0 transparent;
-    padding: 5px;
+    padding: 4px;
+}
+.newProjectBtns{
+  width: 100px;
+  height: 40px;
+  padding: 2px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.cancelBtns{
+  background: transparent;
+  color: #9e0e0e;
+  border: 1px solid #9e0e0e;
+}
+#resetFields{
+  position: relative;
+  top: -60px;
+  
+}
+#addAppliance{
+  width: 150px;
+  background: #68c5a1;
+  color: #fff;
+  border: 1px solid #68c5a1;
+  position: relative;
+  top: -20px;
+  left: 25%;
+}
+#addPanelParams{
+  background: #5e5896;
+  color: #fff;
+  border: 1px solid #5e5896;
+  position: relative;
+  top: 40px;
+  left: 25%;
+}
+#addBatteryParams{
+  background: green;
+  color: #fff;
+  border: 1px solid green;
+  position: relative;
+  top: 40px;
+  left: 25%;
 }

@@ -74,24 +74,74 @@
                             </select>
                         </div>
 
-                        <div class="field">
+                        <div class="field hou">
                             <input type="number" name="hourOfUsage" id="hourOfUsage" placeholder="9">
                             <label for="hourOfUsage">Hour Of Usage</label>
                         </div>
 
-                        <div class="field">
+                        <div class="field pf">
                             <input type="number" list="powerFactor" name="powerFactor" id="powerFactor" placeholder="0.8">
                             <label for="powerFactor">Power Factor Rating</label>
+                        </div>
+
+                        <div class="field">
+                            <button class="newProjectBtns cancelBtns" id="resetFields">cancel</button>
+                            <button class="newProjectBtns" id="addAppliance">add appliance</button>
                         </div>
                     </form>
                 </div>
 
                 <div id="panelContent">
-                    <p>yippee11</p>
+                    <form action="">
+                        <div class="field">
+                            <input type="number" name="unitPanelVoltage" id="unitPanelVoltage" placeholder="10" style="width:200px">
+                            <label for="unitPanelVoltage">Unit Panel Voltage</label>
+                        </div>
+                        
+                        <div class="field">
+                            <input type="number" name="unitPeakPower" id="unitPeakPower" placeholder="10" style="width:200px">
+                            <label for="unitPeakPower">Unit Peak Power(Watts)</label>
+                        </div>
+
+                        <div class="field">
+                            <input type="number" name="unitPanelPeakVoltage" id="unitPanelPeakVoltage" placeholder="2" style="width:200px">
+                            <label for="unitPanelPeakVoltage">Unit Panel Peak Voltage</label>
+                        </div>
+
+                        <div class="field">
+                            <button class="newProjectBtns cancelBtns" id="resetPanel">cancel</button>
+                            <button class="newProjectBtns" id="addPanelParams">done</button>
+                        </div>
+                    </form>
                 </div>
 
                 <div id="batteryContent">
-                    <p>yippee222</p>
+                    <form action="">
+                        <div class="field">
+                            <input type="number" name="unitBatteryCapacity" id="unitBatteryCapacity" placeholder="10" style="width:200px">
+                            <label for="unitBatteryCapacity">Unit Battery Capacity(Amp/hr)</label>
+                        </div>
+                        
+                        <div class="field">
+                            <input type="number" name="unitBatteryVoltage" id="unitBatteryVoltage" placeholder="10" style="width:200px">
+                            <label for="unitBatteryVoltage">Unit Battery Voltage</label>
+                        </div>
+
+                        <div class="field">
+                            <input type="number" name="depthOfDischarge" id="depthOfDischarge" placeholder="2" style="width:200px">
+                            <label for="depthOfDischarge">Depth Of Discharge(%)</label>
+                        </div>
+
+                        <div class="field">
+                                <input type="number" name="daysOfAutonomous" id="daysOfAutonomous" placeholder="2" style="width:200px">
+                                <label for="daysOfAutonomous">Days Of Autonomous</label>
+                        </div>
+
+                        <div class="field">
+                            <button class="newProjectBtns cancelBtns" id="resetBattery">cancel</button>
+                            <button class="newProjectBtns" id="addBatteryParams">done</button>
+                        </div>
+                        </form>
                 </div>
 
                 <div id="controllerContent">
