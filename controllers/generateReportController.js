@@ -1,5 +1,6 @@
 // imports
-let { text } = require('../models/applianceModel')
+let { getAppliances, Appliance } = require('../models/applianceModel')
+let { getUpdatedAppliances } = require('../models/calculatorModel')
 
 // DOM elements
 let applianceName = document.querySelector('#applianceName')
@@ -18,5 +19,3 @@ let getApplianceParams = e => {
         applianceName: applianceName.value
     }
 }
-
-console.log(text)

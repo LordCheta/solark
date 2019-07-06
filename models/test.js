@@ -1,5 +1,5 @@
 const Solark = require("./solarkModel");
-const Appliance = require("./applianceModel");
+const { getAppliances, Appliance } = require("./applianceModel");
 const getUpdatedAppliances = require("./calculatorModel");
 
 // use Appliance class as such
@@ -8,13 +8,13 @@ const getUpdatedAppliances = require("./calculatorModel");
 * <applianceName>.addToAppliances();
 */
 
-let fan = new Appliance('fan',5,750,'W',9,0.8);
+let fan = new Appliance('fan','5','750','W','9','0.8');
 fan.addToAppliances();
 
-let fridge = new Appliance('fridge',5,1500,'W',9,0.8);
+let fridge = new Appliance('fridge','5','1500','W','9','0.8');
 fridge.addToAppliances();
 
-let touch = new Appliance('touch',5,50,'W',9,0.8);
+let touch = new Appliance('touch','5','50','W','9','0.8');
 touch.addToAppliances();
 
 let appliances = getAppliances();

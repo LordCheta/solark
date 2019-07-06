@@ -1,7 +1,7 @@
 
-let appliancesArray = [];
+const appliancesArray = [];
 
-let getAppliances = () => {
+const getAppliances = () => {
   return appliancesArray;
 }
 
@@ -20,15 +20,12 @@ class Appliance {
     }
   }
   addToAppliances () {
-    appliances.push(this.applianceObj);
+    appliancesArray.push(this.applianceObj);
   }
 }
 
-let text = "Amazing stuff really"
 
 module.exports = {
-  appliancesArray,
   getAppliances,
-  Appliance,
-  text
+  Appliance
 }

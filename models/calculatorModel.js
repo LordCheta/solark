@@ -28,6 +28,10 @@ const calEnergy = (power, hourOfUsage) => {
 //add other appliance properties
 const upadteAppliance = (appliances) => {
   appliances.forEach(appliance => {
+    appliance.quantity = Number(appliance.quantity);
+    appliance.powerRating = Number(appliance.powerRating);
+    appliance.hourOfUsage = Number(appliance.hourOfUsage);
+    appliance.powerFactor = Number(appliance.powerFactor);
     appliance.powerRatingWatt = calPowerRatingWatt(appliance.powerRatingUnit,appliance.powerRating);
     appliance.unitPower = calUnitPower(appliance.powerRatingWatt,appliance.powerFactor);
     appliance.power = calPower(appliance.quantity,appliance.unitPower);
