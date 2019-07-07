@@ -16,14 +16,14 @@ let activeHeader = document.querySelectorAll('.activeHeader')
 let activeBtn = document.querySelectorAll('.activeBtn')
 
 let toggleView = params => {
-    let 
-    { 
-        btnToShow, 
-        headerToShow, 
-        headerToHide1, 
-        headerToHide2, 
-        headerToHide3, 
-        colorOfHeaderShown, 
+    let
+    {
+        btnToShow,
+        headerToShow,
+        headerToHide1,
+        headerToHide2,
+        headerToHide3,
+        colorOfHeaderShown,
         contentToShow,
         contentToHide1,
         contentToHide2,
@@ -45,7 +45,7 @@ let toggleView = params => {
     headerToHide2.style.display = 'none'
     headerToHide3.style.display = 'none'
     headerToShow.style.display = 'block'
-    
+
     // Fix the dynamic background color changing
     document.querySelectorAll('.activeBtn').forEach( btn => {
         btn.style.backgroundColor = colorOfHeaderShown
@@ -64,12 +64,21 @@ let toggleView = params => {
 
 applianceBtn.addEventListener('click', () => {
     let params = {
+<<<<<<< HEAD
         btnToShow: applianceBtn, 
         headerToShow: applianceHeader, 
         headerToHide1: panelHeader, 
         headerToHide2: batteryHeader, 
         headerToHide3: controllerHeader, 
         colorOfHeaderShown: '#63c563', 
+=======
+        btnToShow: applianceBtn,
+        headerToShow: applianceHeader,
+        headerToHide1: panelHeader,
+        headerToHide2: batteryHeader,
+        headerToHide3: controllerHeader,
+        colorOfHeaderShown: '#68c5a1',
+>>>>>>> 369f635728cf777143b4a99b1aff8d98209a600f
         contentToShow: applianceContent,
         contentToHide1: panelContent,
         contentToHide2: batteryContent,
@@ -81,12 +90,21 @@ applianceBtn.addEventListener('click', () => {
 
 panelBtn.addEventListener('click', () => {
     let params = {
+<<<<<<< HEAD
         btnToShow: panelBtn, 
         headerToShow: panelHeader, 
         headerToHide1: applianceHeader, 
         headerToHide2: batteryHeader, 
         headerToHide3: controllerHeader, 
         colorOfHeaderShown: '#63c563', 
+=======
+        btnToShow: panelBtn,
+        headerToShow: panelHeader,
+        headerToHide1: applianceHeader,
+        headerToHide2: batteryHeader,
+        headerToHide3: controllerHeader,
+        colorOfHeaderShown: '#5e5896',
+>>>>>>> 369f635728cf777143b4a99b1aff8d98209a600f
         contentToShow: panelContent,
         contentToHide1: applianceContent,
         contentToHide2: batteryContent,
@@ -98,12 +116,21 @@ panelBtn.addEventListener('click', () => {
 
 batteryBtn.addEventListener('click', () => {
     let params = {
+<<<<<<< HEAD
         btnToShow: batteryBtn, 
         headerToShow: batteryHeader, 
         headerToHide1: applianceHeader, 
         headerToHide2: panelHeader, 
         headerToHide3: controllerHeader, 
         colorOfHeaderShown: '#63c563', 
+=======
+        btnToShow: batteryBtn,
+        headerToShow: batteryHeader,
+        headerToHide1: applianceHeader,
+        headerToHide2: panelHeader,
+        headerToHide3: controllerHeader,
+        colorOfHeaderShown: 'green',
+>>>>>>> 369f635728cf777143b4a99b1aff8d98209a600f
         contentToShow: batteryContent,
         contentToHide1: applianceContent,
         contentToHide2: panelContent,
@@ -115,12 +142,21 @@ batteryBtn.addEventListener('click', () => {
 
 controllerBtn.addEventListener('click', () => {
     let params = {
+<<<<<<< HEAD
         btnToShow: controllerBtn, 
         headerToShow: controllerHeader, 
         headerToHide1: applianceHeader, 
         headerToHide2: panelHeader, 
         headerToHide3: batteryHeader, 
         colorOfHeaderShown: '#63c563', 
+=======
+        btnToShow: controllerBtn,
+        headerToShow: controllerHeader,
+        headerToHide1: applianceHeader,
+        headerToHide2: panelHeader,
+        headerToHide3: batteryHeader,
+        colorOfHeaderShown: '#0f222f',
+>>>>>>> 369f635728cf777143b4a99b1aff8d98209a600f
         contentToShow: controllerContent,
         contentToHide1: applianceContent,
         contentToHide2: panelContent,
