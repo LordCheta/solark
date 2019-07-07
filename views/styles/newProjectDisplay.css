@@ -40,7 +40,7 @@
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
     color: #767d85;
-    background-color: #e4dada;
+    background-color: #eee;
     cursor: pointer;
 }
 .activeHeader{
@@ -191,10 +191,11 @@ form {
     top: -50px;
     left: 50%;
   }
-select{
+.unitSelect{
     width: 200px;
     height: 35px;
     background: #495e56;
+    /* font-size: 16px; */
     color: #e4dada;
     border: 0 soid #5e5896;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -203,6 +204,9 @@ select{
     font-weight: 400;
     box-shadow: 0 0 0 transparent;
     padding: 4px;
+}
+.unitSelect option{
+  font-size: 16px;
 }
 .newProjectBtns{
   width: 100px;
@@ -220,32 +224,34 @@ select{
   color: #9e0e0e;
   border: 1px solid #9e0e0e;
 }
+.okBtn{
+  width: 150px;
+  background: #339933;
+  color: #fff;
+  border: 1px solid #339933;
+}
 #resetFields{
   position: relative;
   top: -60px;
 
 }
 #addAppliance{
-  width: 150px;
-  background: #68c5a1;
-  color: #fff;
-  border: 1px solid #68c5a1;
+  
   position: relative;
   top: -20px;
   left: 25%;
 }
 #addPanelParams{
-  background: #5e5896;
-  color: #fff;
-  border: 1px solid #5e5896;
   position: relative;
   top: 40px;
   left: 25%;
 }
 #addBatteryParams{
-  background: green;
-  color: #fff;
-  border: 1px solid green;
+  position: relative;
+  top: 40px;
+  left: 25%;
+}
+#addControllerParams{
   position: relative;
   top: 40px;
   left: 25%;
@@ -255,24 +261,82 @@ select{
 * For List View details
 */
 details {
-  border: 1px solid #aaa;
-  margin: .5em;
   border-radius: 4px;
   padding: .5em .5em 0;
   cursor: pointer;
 }
-details > summary {
+details>summary {
+  background-color:#eee;
+  border-bottom: 1px solid #aaa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 200;
+  color: #767d85;
   margin: -.5em -.5em 0;
   padding: .5em;
 }
 details[open] summary {
+  background-color:#eee;
   border-bottom: 1px solid #aaa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 200;
+  color: #767d85;
   margin-bottom: .5em;
 }
 details[open] ul{
   padding: .1em;
 }
-details[open] ul li{
-  padding: .7em;
+details[open]>ul>li{
+  display: inline-block;
+  padding: 10px;
   border-bottom: 1px solid #d6dbe0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 100;
+  font-size: 15px;
+  color: #767d85;
+}
+.listViewAppliance{
+  float: left;
+  width:160px;
+  height: 20px;
+  margin-right: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.editAppliance{
+  width: 60px;
+  background: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #339933;
+  padding: 5px;
+  border: 1px solid #339933;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.editAppliance:hover{
+  background: #339933;
+  color: #fff;
+}
+.removeAppliance{
+  width: 60px;
+  background: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #9e0e0e;
+  padding: 5px;
+  border: 1px solid #9e0e0e;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.removeAppliance:hover{
+  background: #9e0e0e;
+  color: #fff;
 }

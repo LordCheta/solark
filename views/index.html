@@ -58,35 +58,35 @@
                         </div>
 
                         <div class="field">
-                            <input type="number" name="applianceQty" id="applianceQty" placeholder="10" required>
+                            <input type="number" name="applianceQty" id="applianceQty" placeholder="10" min="1" required>
                             <label for="applianceQty">Appliance Quantity</label>
                         </div>
 
                         <div class="field">
-                            <input type="number" name="applianceRating" id="applianceRating" placeholder="2" required>
+                            <input type="number" name="applianceRating" id="applianceRating" placeholder="2" min="0" step="0.01" required>
                             <label for="applianceRating">Appliance Rating</label>
                         </div>
 
                         <div class="custom-select field" style="width:200px">
-                            <select name="ratingUnit" id="ratingUnit" required>
+                            <select class="unitSelect" name="ratingUnit" id="ratingUnit" required>
                                 <option value="W">Watts</option>
                                 <option value="Hp">Horse Power</option>
                             </select>
                         </div>
 
                         <div class="field hou">
-                            <input type="number" name="hourOfUsage" id="hourOfUsage" placeholder="9" required>
+                            <input type="number" name="hourOfUsage" id="hourOfUsage" placeholder="9" min="0" required>
                             <label for="hourOfUsage">Hour Of Usage</label>
                         </div>
 
                         <div class="field pf">
-                            <input type="number" list="powerFactor" name="powerFactor" min="0" max="1" step="0.1" id="powerFactor" placeholder="0.8" required>
+                            <input type="number" list="powerFactor" name="powerFactor" min="0.5" max="0.9" step="0.1" id="powerFactor" placeholder="0.8" required>
                             <label for="powerFactor">Power Factor Rating</label>
                         </div>
 
                         <div class="field">
                             <button type="reset" class="newProjectBtns cancelBtns" id="resetFields">cancel</button>
-                            <button type="submit" class="newProjectBtns" id="addAppliance">add appliance</button>
+                            <button type="submit" class="newProjectBtns okBtn" id="addAppliance">add appliance</button>
                         </div>
                     </form>
                 </div>
@@ -110,7 +110,7 @@
 
                         <div class="field">
                             <button class="newProjectBtns cancelBtns" id="resetPanel">cancel</button>
-                            <button class="newProjectBtns" id="addPanelParams">done</button>
+                            <button class="newProjectBtns okBtn" id="addPanelParams">done</button>
                         </div>
                     </form>
                 </div>
@@ -133,66 +133,62 @@
                         </div>
 
                         <div class="field">
-                                <input type="number" name="daysOfAutonomous" id="daysOfAutonomous" placeholder="2" style="width:200px">
-                                <label for="daysOfAutonomous">Days Of Autonomous</label>
+                                <input title="Number of days battery can carry given load without recharge" type="number" name="daysOfAutonomous" id="daysOfAutonomous" placeholder="2" style="width:200px">
+                                <label title="Number of days battery can carry given load without recharge" for="daysOfAutonomous">Days Of Autonomous</label>
                         </div>
 
                         <div class="field">
                             <button class="newProjectBtns cancelBtns" id="resetBattery">cancel</button>
-                            <button class="newProjectBtns" id="addBatteryParams">done</button>
+                            <button class="newProjectBtns okBtn" id="addBatteryParams">done</button>
                         </div>
-                        </form>
+                    </form>
                 </div>
 
                 <div id="controllerContent">
-                    <p>yippee333</p>
+                    <form action="">
+                        <div class="field">
+                            <input type="number" name="systemVoltage" id="systemVoltage" placeholder="10" style="width:200px">
+                            <label for="systemVoltage">System Voltage</label>
+                        </div>
+
+                        <div class="field">
+                            <input type="number" name="peakSunHours" id="peakSunHours" placeholder="10" style="width:200px">
+                            <label for="peakSunHours">Peak Sun Hours</label>
+                        </div>
+
+                        <div class="field">
+                            <input type="number" name="chargeControllerRating" id="chargeControllerRating" placeholder="2" style="width:200px">
+                            <label for="chargeControllerRating">Charge Controller Rating</label>
+                        </div>
+
+                        <div class="field">
+                            <button class="newProjectBtns cancelBtns" id="resetController">cancel</button>
+                            <button class="newProjectBtns okBtn" id="addControllerParams">generate report</button>
+                        </div>
+                    </form>
                 </div>
 
             </div>
 
             <div id="listView">
-                <details id="applianceView">
+                <details id="applianceView" open>
                     <summary>Appliances</summary>
-                    <ul>
-                        <li>
-                            <button>edit</button>
-                            <span>Standing cooker...</span>
-                            <button>delete</button>
-                        </li>
-                        <li>
-                            <button>edit</button>
-                            <span>Standing cooker</span>
-                            <button>delete</button>
-                        </li>
-                        <li>
-                            <button>edit</button>
-                            <span>Standing cooker</span>
-                            <button>delete</button>
-                        </li>
-                    </ul>
+                    <ul id="applianceViewUl"></ul>
                 </details>
-                <details id="batteryView">
+                <details id="batteryView" open>
                     <summary>Battery</summary>
                     <ul>
-                        <li>
-                            <span>Standing cooker...</span>
-                        </li>
                     </ul>
                 </details>
-                <details id="panelView">
+                <details id="panelView" open>
                     <summary>Panel</summary>
                     <ul>
-                        <li>
-                            <span>Standing cooker...</span>
-                        </li>
+                        
                     </ul>
                 </details>
-                <details id="sysControllerView">
+                <details id="sysControllerView" open>
                     <summary>System and Controller</summary>
                     <ul>
-                        <li>
-                            <span>Standing cooker...</span>
-                        </li>
                     </ul>
                 </details>
             </div>

@@ -19,5 +19,8 @@
     "devtron": "^1.4.0",
     "electron": "^4.2.5",
     "electron-reload": "^1.4.0"
+  },
+  "dependencies": {
+    "uuid4": "^1.1.4"
   }
 }

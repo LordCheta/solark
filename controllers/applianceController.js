@@ -6,33 +6,41 @@ let { notEmpty } = require('../models/validationModel')
 // DOM elements
 let applianceForm = document.querySelector('#applianceForm');
 let resetFields = document.querySelector('#resetFields')
-// let addAppliance = document.querySelector('#addAppliance');
-let listView = document.querySelector('#listView')
+let applianceViewUl = document.querySelector('#applianceViewUl')
 
 // method to get form input values
-let getApplianceParams = () => {
-    /* let applianceParams = {
-        applianceName: applianceName.value
-    } */
-
-    applianceForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        let applianceName = e.target.applianceName.value;
-        let applianceQty = e.target.applianceQty.value;
-        let applianceRating = e.target.applianceRating.value;
-        let ratingUnit = e.target.ratingUnit.value;
-        let hourOfUsage = e.target.hourOfUsage.value;
-        let powerFactor = e.target.powerFactor.value;
-        console.log(applianceName,applianceQty,applianceRating,ratingUnit,hourOfUsage,powerFactor);
-         /*
-        if(notEmpty(applianceName) && notEmpty(applianceQty) && notEmpty(applianceRating) && notEmpty(ratingUnit) && notEmpty(hourOfUsage) && notEmpty(powerFactor)){
-            let device = new Appliance(applianceName,applianceQty,applianceRating,ratingUnit,hourOfUsage,powerFactor);
-            device.addToAppliances();
-            let appliances = getAppliances();
-            appliances = getUpdatedAppliances(appliances);
-            console.log(appliances);
-        } */
-    })
-
+const getApplianceParams = (e) => {
+    e.preventDefault();
+     return {
+        applianceName: e.target.applianceName.value,
+        applianceQty: e.target.applianceQty.value,
+        applianceRating: e.target.applianceRating.value,
+        ratingUnit: e.target.ratingUnit.value,
+        hourOfUsage: e.target.hourOfUsage.value,
+        powerFactor: e.target.powerFactor.value
+    } 
+    
 }
-getApplianceParams();
+
+const addApllianceToList = () => {
+    applianceViewUl.innerHTML = ""
+    let appliances = getAppliances()
+    for (const appliance of appliances) {
+        let listApplianceTemplate = `<li>
+            <p class="listViewAppliance">${appliance.name}</p>
+            <button class="editAppliance">edit</button>
+            <button class="removeAppliance">remove</button>
+        </li>`
+        
+        applianceViewUl.insertAdjacentHTML("beforeend", listApplianceTemplate)
+    }
+}
+applianceForm.addEventListener("submit", (e) => {
+        let nA = getApplianceParams(e)
+        
+        let newAppliance  = new Appliance(nA.applianceName, nA.applianceQty, nA.applianceRating, nA.ratingUnit, nA.hourOfUsage, nA.powerFactor)
+        newAppliance.addToAppliances();
+
+        addApllianceToList()
+
+})
