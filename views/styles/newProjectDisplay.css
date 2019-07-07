@@ -83,7 +83,7 @@ form {
   /**
   * Make the field a flex-container, reverse the order so label is on top.
   */
-   
+
   .field {
     display: flex;
     flex-flow: column-reverse;
@@ -92,14 +92,14 @@ form {
   /**
   * Add a transition to the label and input.
   * I'm not even sure that touch-action: manipulation works on
-  * inputs, but hey, it's new and cool and could remove the 
+  * inputs, but hey, it's new and cool and could remove the
   * pesky delay.
   */
   label, input {
     transition: all 0.2s;
     touch-action: manipulation;
   }
-  
+
   input {
     border: 0;
     font-family: inherit;
@@ -120,7 +120,7 @@ form {
     color: darkslategray;
     border-bottom: 2px solid #a4cca7;
   }
-  
+
   label {
     text-transform: uppercase;
     font-size: 10px;
@@ -142,7 +142,7 @@ form {
     transform: translate(0, 2.125rem) scale(1.5);
   }
   /**
-  * By default, the placeholder should be transparent. Also, it should 
+  * By default, the placeholder should be transparent. Also, it should
   * inherit the transition.
   */
   ::-webkit-input-placeholder {
@@ -157,7 +157,7 @@ form {
   }
   /**
   * When the element is focused, remove the label transform.
-  * Also, do this when the placeholder is _not_ shown, i.e. when 
+  * Also, do this when the placeholder is _not_ shown, i.e. when
   * there's something in the input at all.
   */
   input:not(:placeholder-shown) + label,
@@ -223,7 +223,7 @@ select{
 #resetFields{
   position: relative;
   top: -60px;
-  
+
 }
 #addAppliance{
   width: 150px;
@@ -249,4 +249,30 @@ select{
   position: relative;
   top: 40px;
   left: 25%;
+}
+
+/**
+* For List View details
+*/
+details {
+  border: 1px solid #aaa;
+  margin: .5em;
+  border-radius: 4px;
+  padding: .5em .5em 0;
+  cursor: pointer;
+}
+details > summary {
+  margin: -.5em -.5em 0;
+  padding: .5em;
+}
+details[open] summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: .5em;
+}
+details[open] ul{
+  padding: .1em;
+}
+details[open] ul li{
+  padding: .7em;
+  border-bottom: 1px solid #d6dbe0;
 }
