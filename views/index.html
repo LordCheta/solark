@@ -27,7 +27,7 @@
             <div id="selectView">
                 <div id="applianceHeader" class="selectViewHeader activeHeader">
                     <h2 class="svH">APPLIANCES</h2>
-                    <p class="svP">create and modify appliances</p>
+                    <p class="svP">add and modify appliances</p>
                 </div>
 
                 <div id="panelHeader" class="selectViewHeader">
@@ -37,7 +37,7 @@
 
                 <div id="batteryHeader" class="selectViewHeader">
                     <h2 class="svH">BATTERY</h2>
-                    <p class="svP">choose battery parameters</p>
+                    <p class="svP">set battery parameters</p>
                 </div>
 
                 <div id="controllerHeader" class="selectViewHeader">
@@ -51,42 +51,42 @@
                 <button id="controllerBtn" class="svBtns">Controller</button>
 
                 <div id="applianceContent">
-                    <form action="">
+                    <form id="applianceForm" action="">
                         <div class="field">
-                          <input type="text" name="applianceName" id="applianceName" placeholder="Electric Cooker">
+                          <input type="text" name="applianceName" id="applianceName" placeholder="Electric Cooker" required>
                           <label for="applianceName">Appliance Name</label>
                         </div>
-                        
+
                         <div class="field">
-                            <input type="number" name="applianceQty" id="applianceQty" placeholder="10">
+                            <input type="number" name="applianceQty" id="applianceQty" placeholder="10" required>
                             <label for="applianceQty">Appliance Quantity</label>
                         </div>
 
                         <div class="field">
-                            <input type="number" name="applianceRating" id="applianceRating" placeholder="2">
+                            <input type="number" name="applianceRating" id="applianceRating" placeholder="2" required>
                             <label for="applianceRating">Appliance Rating</label>
                         </div>
 
                         <div class="custom-select field" style="width:200px">
-                            <select name="ratingUnit" id="ratingUnit">
+                            <select name="ratingUnit" id="ratingUnit" required>
                                 <option value="W">Watts</option>
                                 <option value="Hp">Horse Power</option>
                             </select>
                         </div>
 
                         <div class="field hou">
-                            <input type="number" name="hourOfUsage" id="hourOfUsage" placeholder="9">
+                            <input type="number" name="hourOfUsage" id="hourOfUsage" placeholder="9" required>
                             <label for="hourOfUsage">Hour Of Usage</label>
                         </div>
 
                         <div class="field pf">
-                            <input type="number" list="powerFactor" name="powerFactor" id="powerFactor" placeholder="0.8">
+                            <input type="number" list="powerFactor" name="powerFactor" min="0" max="1" step="0.1" id="powerFactor" placeholder="0.8" required>
                             <label for="powerFactor">Power Factor Rating</label>
                         </div>
 
                         <div class="field">
-                            <button class="newProjectBtns cancelBtns" id="resetFields">cancel</button>
-                            <button class="newProjectBtns" id="addAppliance">add appliance</button>
+                            <button type="reset" class="newProjectBtns cancelBtns" id="resetFields">cancel</button>
+                            <button type="submit" class="newProjectBtns" id="addAppliance">add appliance</button>
                         </div>
                     </form>
                 </div>
@@ -97,7 +97,7 @@
                             <input type="number" name="unitPanelVoltage" id="unitPanelVoltage" placeholder="10" style="width:200px">
                             <label for="unitPanelVoltage">Unit Panel Voltage</label>
                         </div>
-                        
+
                         <div class="field">
                             <input type="number" name="unitPeakPower" id="unitPeakPower" placeholder="10" style="width:200px">
                             <label for="unitPeakPower">Unit Peak Power(Watts)</label>
@@ -121,7 +121,7 @@
                             <input type="number" name="unitBatteryCapacity" id="unitBatteryCapacity" placeholder="10" style="width:200px">
                             <label for="unitBatteryCapacity">Unit Battery Capacity(Amp/hr)</label>
                         </div>
-                        
+
                         <div class="field">
                             <input type="number" name="unitBatteryVoltage" id="unitBatteryVoltage" placeholder="10" style="width:200px">
                             <label for="unitBatteryVoltage">Unit Battery Voltage</label>
@@ -151,7 +151,50 @@
             </div>
 
             <div id="listView">
-
+                <details id="applianceView">
+                    <summary>Appliances</summary>
+                    <ul>
+                        <li>
+                            <button>edit</button>
+                            <span>Standing cooker...</span>
+                            <button>delete</button>
+                        </li>
+                        <li>
+                            <button>edit</button>
+                            <span>Standing cooker</span>
+                            <button>delete</button>
+                        </li>
+                        <li>
+                            <button>edit</button>
+                            <span>Standing cooker</span>
+                            <button>delete</button>
+                        </li>
+                    </ul>
+                </details>
+                <details id="batteryView">
+                    <summary>Battery</summary>
+                    <ul>
+                        <li>
+                            <span>Standing cooker...</span>
+                        </li>
+                    </ul>
+                </details>
+                <details id="panelView">
+                    <summary>Panel</summary>
+                    <ul>
+                        <li>
+                            <span>Standing cooker...</span>
+                        </li>
+                    </ul>
+                </details>
+                <details id="sysControllerView">
+                    <summary>System and Controller</summary>
+                    <ul>
+                        <li>
+                            <span>Standing cooker...</span>
+                        </li>
+                    </ul>
+                </details>
             </div>
         </div>
 
@@ -168,13 +211,13 @@
         </div>
 
     </section>
-    
+
 
     <script type="module">
         require('../renderer.js')
         require('../controllers/sideNavController.js')
         require('../controllers/newProjectController.js')
-        require('../controllers/generateReportController.js')
+        require('../controllers/applianceController.js')
     </script>
 </body>
 </html>
