@@ -18,11 +18,11 @@ const getApplianceParams = (e) => {
         ratingUnit: e.target.ratingUnit.value,
         hourOfUsage: e.target.hourOfUsage.value,
         powerFactor: e.target.powerFactor.value
-    } 
-    
+    }
+
 }
 
-const addApllianceToList = () => {
+const renderAplliancesToList = () => {
     applianceViewUl.innerHTML = ""
     let appliances = getAppliances()
     for (const appliance of appliances) {
@@ -31,16 +31,16 @@ const addApllianceToList = () => {
             <button class="editAppliance">edit</button>
             <button class="removeAppliance">remove</button>
         </li>`
-        
+
         applianceViewUl.insertAdjacentHTML("beforeend", listApplianceTemplate)
     }
 }
 applianceForm.addEventListener("submit", (e) => {
         let nA = getApplianceParams(e)
-        
+
         let newAppliance  = new Appliance(nA.applianceName, nA.applianceQty, nA.applianceRating, nA.ratingUnit, nA.hourOfUsage, nA.powerFactor)
         newAppliance.addToAppliances();
 
-        addApllianceToList()
+        renderAplliancesToList()
 
 })

@@ -1,4 +1,9 @@
 /* Tab view styles */
+.fontFamily{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
 #selectView{
     grid-column: 1 / span 1;
     border-right: solid 1px rgb(158, 209, 147);
@@ -236,7 +241,7 @@ form {
 
 }
 #addAppliance{
-  
+
   position: relative;
   top: -20px;
   left: 25%;
@@ -287,7 +292,8 @@ details[open] summary {
   margin-bottom: .5em;
 }
 details[open] ul{
-  padding: .1em;
+  max-height: 200px;
+  overflow-y: scroll;
 }
 details[open]>ul>li{
   display: inline-block;
@@ -297,7 +303,7 @@ details[open]>ul>li{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 100;
-  font-size: 15px;
+  font-size: 12px;
   color: #767d85;
 }
 .listViewAppliance{
@@ -319,6 +325,7 @@ details[open]>ul>li{
   border: 1px solid #339933;
   border-radius: 20px;
   cursor: pointer;
+  font-size: 12px;
 }
 .editAppliance:hover{
   background: #339933;
@@ -335,8 +342,19 @@ details[open]>ul>li{
   border: 1px solid #9e0e0e;
   border-radius: 20px;
   cursor: pointer;
+  font-size: 12px;
 }
 .removeAppliance:hover{
   background: #9e0e0e;
   color: #fff;
+}
+.generalParams{
+  font-weight: 100;
+  color: #767d85;
+  padding: 10px;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+}
+.unitParams{
+  color: #495e56;
 }

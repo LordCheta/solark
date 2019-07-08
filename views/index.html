@@ -157,8 +157,8 @@
                         </div>
 
                         <div class="field">
-                            <input type="number" name="chargeControllerRating" id="chargeControllerRating" placeholder="2" style="width:200px">
-                            <label for="chargeControllerRating">Charge Controller Rating</label>
+                            <input title="This is the unit current rating of the solar charge controller" type="number" name="chargeControllerRating" id="chargeControllerRating" placeholder="2" style="width:200px">
+                            <label title="This is the unit current rating of the solar charge controller" for="chargeControllerRating">Charge Controller Rating</label>
                         </div>
 
                         <div class="field">
@@ -175,21 +175,33 @@
                     <summary>Appliances</summary>
                     <ul id="applianceViewUl"></ul>
                 </details>
-                <details id="batteryView" open>
-                    <summary>Battery</summary>
-                    <ul>
-                    </ul>
-                </details>
+
                 <details id="panelView" open>
                     <summary>Panel</summary>
-                    <ul>
-                        
-                    </ul>
+                    <div id="panelList">
+                        <p class="generalParams fontFamily">Unit Panel Voltage: <span class="unitParams">20 volts</span></p>
+                        <p class="generalParams fontFamily">Unit Peak Power: <span class="unitParams">100 Watts</span></p>
+                        <p class="generalParams fontFamily">Unit Panel Peak Voltage: <span class="unitParams">20 volts</span></p>
+                    </div>
                 </details>
+
+                <details id="batteryView" open>
+                    <summary>Battery</summary>
+                    <div id="batteryList">
+                        <p class="generalParams fontFamily">Unit Battery Capacity: <span class="unitParams">3 Amp/Hr</span></p>
+                        <p class="generalParams fontFamily">Unit Battery Voltage: <span class="unitParams">10 volts</span></p>
+                        <p class="generalParams fontFamily">Depth of Discharge: <span class="unitParams">20 %</span></p>
+                        <p class="generalParams fontFamily">Days of Autonomous: <span class="unitParams">3 days</span></p>
+                    </div>
+                </details>
+
                 <details id="sysControllerView" open>
                     <summary>System and Controller</summary>
-                    <ul>
-                    </ul>
+                    <div id="systemList">
+                        <p class="generalParams fontFamily">System Voltage: <span class="unitParams">12 volts</span></p>
+                        <p class="generalParams fontFamily">Peak Sun Hours: <span class="unitParams">3 hours</span></p>
+                        <p class="generalParams fontFamily">Charge Controller Rating: <span class="unitParams">5 Amps</span></p>
+                    </div>
                 </details>
             </div>
         </div>
