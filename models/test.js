@@ -27,7 +27,7 @@ appliances = getUpdatedAppliances(appliances);
 * const <houseSolar> = new Solark(appliances, systemVoltage, peakSunHour);
 * <houseSolar>.calculateParameters(depthOfDischarge, autonomousDays, unitBatteryCapacity, unitBatteryVoltage, peakPowerOfaPanel, unitPanelPeakVoltage, unitPanelVoltage, unitCurrentRatingSCC)
 * const solarReportObj = <houseSolar>.generateReport();
-* console.log(solarReport);
+* console.log(solarReportObj);
 */
 
 const adminBlockA = new Solark(appliances, 240, 4.71);
