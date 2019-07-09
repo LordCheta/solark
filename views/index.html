@@ -11,15 +11,14 @@
 </head>
 <body class="desktop">
     <section id="menuBar">
-        <nav class="sideNav">
+        <nav id="sideNav">
             <ul>
                 <li class="sideNavActive" id="newProject"><a href="#">NEW PROJECT</a></li>
                 <li id="savedProject"><a href="#">SAVED PROJECTS</a></li>
                 <li id="help"><a href="#">HELP</a></li>
                 <li id="about"><a href="#">ABOUT</a></li>
             </ul>
-        </nav>
-
+        </nav>  
     </section>
 
     <section id="displayArea">
@@ -53,7 +52,7 @@
                 <div id="applianceContent">
                     <form id="applianceForm" action="">
                         <div class="field">
-                          <input type="text" name="applianceName" id="applianceName" placeholder="Electric Cooker" required>
+                          <input autofocus type="text" name="applianceName" id="applianceName" placeholder="Electric Cooker" required>
                           <label for="applianceName">Appliance Name</label>
                         </div>
 
@@ -92,78 +91,79 @@
                 </div>
 
                 <div id="panelContent">
-                    <form action="">
+                    <form action="" id="panelForm">
                         <div class="field">
-                            <input type="number" name="unitPanelVoltage" id="unitPanelVoltage" placeholder="10" style="width:200px">
+                            <input autofocus type="number" min="0" step="0.01" name="unitPanelVoltage" id="unitPanelVoltage" placeholder="10" style="width:200px" required>
                             <label for="unitPanelVoltage">Unit Panel Voltage</label>
                         </div>
 
                         <div class="field">
-                            <input type="number" name="unitPeakPower" id="unitPeakPower" placeholder="10" style="width:200px">
+                            <input type="number" min="0" step="0.01" name="unitPeakPower" id="unitPeakPower" placeholder="10" style="width:200px" required>
                             <label for="unitPeakPower">Unit Peak Power(Watts)</label>
                         </div>
 
                         <div class="field">
-                            <input type="number" name="unitPanelPeakVoltage" id="unitPanelPeakVoltage" placeholder="2" style="width:200px">
+                            <input type="number" min="0" step="0.01" name="unitPanelPeakVoltage" id="unitPanelPeakVoltage" placeholder="2" style="width:200px" required>
                             <label for="unitPanelPeakVoltage">Unit Panel Peak Voltage</label>
                         </div>
 
                         <div class="field">
-                            <button class="newProjectBtns cancelBtns" id="resetPanel">cancel</button>
-                            <button class="newProjectBtns okBtn" id="addPanelParams">done</button>
+                            <button type="reset" class="newProjectBtns cancelBtns" id="resetPanel">cancel</button>
+                            <button type="submit" class="newProjectBtns okBtn" id="addPanelParams">done</button>
                         </div>
                     </form>
                 </div>
 
                 <div id="batteryContent">
-                    <form action="">
+                    <form action="" id="batteryForm">
                         <div class="field">
-                            <input type="number" name="unitBatteryCapacity" id="unitBatteryCapacity" placeholder="10" style="width:200px">
+                            <input autofocus min="0" step="0.01" required type="number" name="unitBatteryCapacity" id="unitBatteryCapacity" placeholder="10" style="width:200px">
                             <label for="unitBatteryCapacity">Unit Battery Capacity(Amp/hr)</label>
                         </div>
 
                         <div class="field">
-                            <input type="number" name="unitBatteryVoltage" id="unitBatteryVoltage" placeholder="10" style="width:200px">
+                            <input min="0" step="0.01" required type="number" name="unitBatteryVoltage" id="unitBatteryVoltage" placeholder="10" style="width:200px">
                             <label for="unitBatteryVoltage">Unit Battery Voltage</label>
                         </div>
 
                         <div class="field">
-                            <input type="number" name="depthOfDischarge" id="depthOfDischarge" placeholder="2" style="width:200px">
+                            <input min="0.1" step="0.1" required type="number" name="depthOfDischarge" id="depthOfDischarge" placeholder="2" style="width:200px">
                             <label for="depthOfDischarge">Depth Of Discharge(%)</label>
                         </div>
 
                         <div class="field">
-                                <input title="Number of days battery can carry given load without recharge" type="number" name="daysOfAutonomous" id="daysOfAutonomous" placeholder="2" style="width:200px">
+                                <input min="1" required title="Number of days battery can carry given load without recharge" type="number" name="daysOfAutonomous" id="daysOfAutonomous" placeholder="2" style="width:200px">
                                 <label title="Number of days battery can carry given load without recharge" for="daysOfAutonomous">Days Of Autonomous</label>
                         </div>
 
                         <div class="field">
-                            <button class="newProjectBtns cancelBtns" id="resetBattery">cancel</button>
-                            <button class="newProjectBtns okBtn" id="addBatteryParams">done</button>
+                            <button type="reset" class="newProjectBtns cancelBtns" id="resetBattery">cancel</button>
+                            <button type="submit" class="newProjectBtns okBtn" id="addBatteryParams">done</button>
                         </div>
                     </form>
                 </div>
 
                 <div id="controllerContent">
-                    <form action="">
+                    <form action="" id="controllerForm">
                         <div class="field">
-                            <input type="number" name="systemVoltage" id="systemVoltage" placeholder="10" style="width:200px">
+                            <input autofocus min="0" step="0.1" required type="number" name="systemVoltage" id="systemVoltage" placeholder="10" style="width:200px">
                             <label for="systemVoltage">System Voltage</label>
                         </div>
 
                         <div class="field">
-                            <input type="number" name="peakSunHours" id="peakSunHours" placeholder="10" style="width:200px">
+                            <input min="0" step="0.1" required type="number" name="peakSunHours" id="peakSunHours" placeholder="10" style="width:200px">
                             <label for="peakSunHours">Peak Sun Hours</label>
                         </div>
 
                         <div class="field">
-                            <input title="This is the unit current rating of the solar charge controller" type="number" name="chargeControllerRating" id="chargeControllerRating" placeholder="2" style="width:200px">
+                            <input min="0" step="0.1" required title="This is the unit current rating of the solar charge controller" type="number" name="chargeControllerRating" id="chargeControllerRating" placeholder="2" style="width:200px">
                             <label title="This is the unit current rating of the solar charge controller" for="chargeControllerRating">Charge Controller Rating</label>
                         </div>
 
                         <div class="field">
-                            <button class="newProjectBtns cancelBtns" id="resetController">cancel</button>
-                            <button class="newProjectBtns okBtn" id="addControllerParams">generate report</button>
+                            <button type="reset"class="newProjectBtns cancelBtns" id="resetController">cancel</button>
+                            <button type="submit" class="newProjectBtns okBtn" id="addControllerParams">done</button>
+                            <button class="newProjectBtns okBtn" id="generateReportBtn">generate report</button>
                         </div>
                     </form>
                 </div>
@@ -179,28 +179,21 @@
                 <details id="panelView" open>
                     <summary>Panel</summary>
                     <div id="panelList">
-                        <p class="generalParams fontFamily">Unit Panel Voltage: <span class="unitParams">20 volts</span></p>
-                        <p class="generalParams fontFamily">Unit Peak Power: <span class="unitParams">100 Watts</span></p>
-                        <p class="generalParams fontFamily">Unit Panel Peak Voltage: <span class="unitParams">20 volts</span></p>
+                        <!-- Parameters are auto injected here -->
                     </div>
                 </details>
 
                 <details id="batteryView" open>
                     <summary>Battery</summary>
                     <div id="batteryList">
-                        <p class="generalParams fontFamily">Unit Battery Capacity: <span class="unitParams">3 Amp/Hr</span></p>
-                        <p class="generalParams fontFamily">Unit Battery Voltage: <span class="unitParams">10 volts</span></p>
-                        <p class="generalParams fontFamily">Depth of Discharge: <span class="unitParams">20 %</span></p>
-                        <p class="generalParams fontFamily">Days of Autonomous: <span class="unitParams">3 days</span></p>
+                        <!-- Parameters are auto injected here -->
                     </div>
                 </details>
 
                 <details id="sysControllerView" open>
                     <summary>System and Controller</summary>
                     <div id="systemList">
-                        <p class="generalParams fontFamily">System Voltage: <span class="unitParams">12 volts</span></p>
-                        <p class="generalParams fontFamily">Peak Sun Hours: <span class="unitParams">3 hours</span></p>
-                        <p class="generalParams fontFamily">Charge Controller Rating: <span class="unitParams">5 Amps</span></p>
+                        
                     </div>
                 </details>
             </div>
@@ -220,12 +213,30 @@
 
     </section>
 
+    <section id="reportView">
+        <h1 class="fontFamily" id="reportH1">SOLARK</h1>
+        <p class="fontFamily" id="reportP">calculation report</p>
+
+        <div id="reportParams">
+            
+        </div>
+
+        <div style="margin-top: 5%; margin-left: 10%;">
+            <button class="reportBtns fontFamily" id="goHome"> return home</button>
+            <button class="reportBtns fontFamily" id="saveReport"> save report</button>
+            <button class="reportBtns fontFamily" id="printReport"> print report as pdf</button>
+        </div>
+        
+    </section>
+
 
     <script type="module">
         require('../renderer.js')
         require('../controllers/sideNavController.js')
         require('../controllers/newProjectController.js')
         require('../controllers/applianceController.js')
+        require('../controllers/panelBatterySysController.js')
+        require('../controllers/generateReportController.js')
     </script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 const electron = require('electron');
 const path = require('path');
 const url = require('url');
+const fs = require('fs')
 
 
 
@@ -105,13 +106,13 @@ let createWindow = () => {
       backgroundColor: '#fff',
       minWidth: 1000, 
       minHeight: 650 
-    });
+    })
 
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, '/views/index.html'),
         protocol: 'file',
         slashes: true
-    }));
+    }))
 
     mainWindow.webContents.toggleDevTools();
 
@@ -128,7 +129,7 @@ let createWindow = () => {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null
-  });
+  })
 }
 
 const Menu = electron.Menu
@@ -175,3 +176,25 @@ ipcMain.on('app-init', event => {
   }
   mainWindow.show()
 })
+
+// Print pdf
+ipcMain.on('print-to-pdf', event => {
+  windowToPrint = BrowserWindow.fromId(event.sender.webContents.id)
+  windowToPrint.webContents.printToPDF({}, pdfCreated)
+})
+
+function pdfCreated(error, data) {
+  let documents = app.getPath('documents')
+  let filePath = documents + '/' + windowToPrint.getTitle() + '-report.pdf'
+  if(error) {
+    console.error(error.message)
+  }
+  if(data) {
+    fs.writeFile(filePath, data, error => {
+      if(error) {
+        console.error(error.message)
+        return
+      }
+    })
+  }
+}

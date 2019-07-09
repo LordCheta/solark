@@ -23,14 +23,13 @@ console.log(appliances);
 console.log(deleteAppliance(appliances[1].id)),
 console.log(appliances);
 
-// console.log(appliances);
 
 // use Solark class as such
 /*
 * const <houseSolar> = new Solark(appliances, systemVoltage, peakSunHour);
 * <houseSolar>.calculateParameters(depthOfDischarge, autonomousDays, unitBatteryCapacity, unitBatteryVoltage, peakPowerOfaPanel, unitPanelPeakVoltage, unitPanelVoltage, unitCurrentRatingSCC)
 * const solarReportObj = <houseSolar>.generateReport();
-* console.log(solarReport);
+* console.log(solarReportObj);
 */
 
 const adminBlockA = new Solark(appliances, 240, 4.71);
