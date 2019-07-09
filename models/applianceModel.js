@@ -5,6 +5,12 @@ const getAppliances = () => {
   return appliancesArray;
 }
 
+const deleteAppliance = (id) => {
+  let idIndex = appliancesArray.findIndex((appliance) => appliance.id == id);
+  if(idIndex >= 0) return appliancesArray.splice(idIndex,1)[0];
+  return false;
+}
+
 class Appliance {
   constructor(...appliance){
     if (appliance.length !== 0) {
@@ -28,5 +34,6 @@ class Appliance {
 
 module.exports = {
   getAppliances,
-  Appliance
+  Appliance,
+  deleteAppliance
 }

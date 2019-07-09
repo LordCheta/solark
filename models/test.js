@@ -1,5 +1,5 @@
 const Solark = require("./solarkModel");
-const { getAppliances, Appliance } = require("./applianceModel");
+const { getAppliances, Appliance, deleteAppliance } = require("./applianceModel");
 const getUpdatedAppliances = require("./calculatorModel");
 
 // use Appliance class as such
@@ -19,6 +19,9 @@ touch.addToAppliances();
 
 let appliances = getAppliances();
 appliances = getUpdatedAppliances(appliances);
+console.log(appliances);
+console.log(deleteAppliance(appliances[1].id)),
+console.log(appliances);
 
 // console.log(appliances);
 
