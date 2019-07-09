@@ -241,7 +241,12 @@ form {
 
 }
 #addAppliance{
-
+  position: relative;
+  top: -20px;
+  left: 25%;
+}
+#updateAppliance{
+  display: none;
   position: relative;
   top: -20px;
   left: 25%;

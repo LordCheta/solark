@@ -1,16 +1,27 @@
-const uuid4 = require('uuid4');
-const appliancesArray = [];
+const uuid4 = require('uuid4')
+const appliancesArray = []
 
 const getAppliances = () => {
-  return appliancesArray;
+  return appliancesArray
 }
 
-const deleteAppliance = (id) => {
-  let idIndex = appliancesArray.findIndex((appliance) => appliance.id == id);
-  if(idIndex >= 0) return appliancesArray.splice(idIndex,1)[0];
-  return false;
+const deleteAppliance = id => {
+  let idIndex = appliancesArray.findIndex((appliance) => appliance.id == id)
+  if(idIndex >= 0) return appliancesArray.splice(idIndex,1)[0]
+  return false
 }
 
+const getAppliance = id => {
+  let app = appliancesArray.find(appliance => appliance.id == id); 
+  if (app) return app;
+  return false
+}
+
+const updateApplianceParams = params => {
+  console.log(appliancesArray);
+  let idIndex = appliancesArray.findIndex(app => app.id == params.id);
+  appliancesArray.splice(idIndex,1,params)
+}
 class Appliance {
   constructor(...appliance){
     if (appliance.length !== 0) {
@@ -35,5 +46,7 @@ class Appliance {
 module.exports = {
   getAppliances,
   Appliance,
-  deleteAppliance
+  deleteAppliance,
+  getAppliance,
+  updateApplianceParams
 }
