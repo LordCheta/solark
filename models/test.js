@@ -20,7 +20,6 @@ touch.addToAppliances();
 let appliances = getAppliances();
 appliances = getUpdatedAppliances(appliances);
 
-// console.log(appliances);
 
 // use Solark class as such
 /*
