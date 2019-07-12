@@ -48,8 +48,8 @@ reportBtn.addEventListener('click', () => {
 
     let report = newSolark.generateReport()
     let reportTemplate = `
-    <p class="fontFamily unitReports"><span class="unitName">Total Appliance Energy:</span> <span class="unitValue">${report.totalApplianceEnergy} watts</span></p>
-    <p class="fontFamily unitReports"><span class="unitName">Consumer Energy Demand:</span> <span class="unitValue">${report.consumerEnergyDemand} watts</span></p>
+    <p class="fontFamily unitReports"><span class="unitName">Total Appliance Energy:</span> <span class="unitValue">${report.totalApplianceEnergy} watt-hr</span></p>
+    <p class="fontFamily unitReports"><span class="unitName">Consumer Energy Demand:</span> <span class="unitValue">${report.consumerEnergyDemand} watt-hr</span></p>
     <p class="fontFamily unitReports"><span class="unitName">Total Appliance Power:</span> <span class="unitValue">${report.totalAppliancePower} watts</span></p>
     <p class="fontFamily unitReports"><span class="unitName">Inverter Power Rating:</span> <span class="unitValue">${report.inverterPowerRating} watts</span></p>
     <p class="fontFamily unitReports"><span class="unitName">Battery Discharge:</span> <span class="unitValue">${report.batteryDischarge} amp/hr</span></p>
@@ -57,7 +57,7 @@ reportBtn.addEventListener('click', () => {
     <p class="fontFamily unitReports"><span class="unitName">Batteries Needed:</span> <span class="unitValue">${report.batteriesNeeded} batteries</span></p>
     <p class="fontFamily unitReports"><span class="unitName">Total PV Current:</span> <span class="unitValue">${report.totalPVCurrent} amps</span></p>
     <p class="fontFamily unitReports"><span class="unitName">Panels Needed:</span> <span class="unitValue">${report.panelsNeeded} panels</span></p>
-    <p class="fontFamily unitReports"><span class="unitName">SCC Needed:</span> <span class="unitValue">${report.SCCNeeded} watts</span></p>
+    <p class="fontFamily unitReports"><span class="unitName">Solar Charge Controllers Needed:</span> <span class="unitValue">${report.SCCNeeded} controllers</span></p>
     `
     reportParams.insertAdjacentHTML('beforeend', reportTemplate)
 
