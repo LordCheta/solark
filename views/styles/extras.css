@@ -1,0 +1,14 @@
+.about, .saved, .help{
+    text-align: center;
+    margin-top: 15%;
+}
+#vId{
+    font-weight: 100;
+    color: darkslategray;
+    letter-spacing: 0.1em;
+}
+#emptyP{
+    font-weight: 100;
+    color: rgb(148, 137, 137);
+    letter-spacing: 0.07em;
+}
