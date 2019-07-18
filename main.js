@@ -178,16 +178,20 @@ ipcMain.on('app-init', event => {
 })
 
 // Print pdf
-ipcMain.on('print-to-pdf', event => {
+ipcMain.on('print-to-pdf', (event, arg) => {
   windowToPrint = BrowserWindow.fromId(event.sender.webContents.id)
   windowToPrint.webContents.printToPDF({}, pdfCreated)
+  event.sender.send('pdf-printed', "pdf printed to documents")
+  
 })
 
-function pdfCreated(error, data) {
+async function pdfCreated(error, data) {
+  let printed = "pdf printed to documents"
   let documents = app.getPath('documents')
   let filePath = documents + '/' + windowToPrint.getTitle() + '-report.pdf'
   if(error) {
     console.error(error.message)
+    return
   }
   if(data) {
     fs.writeFile(filePath, data, error => {
@@ -197,4 +201,5 @@ function pdfCreated(error, data) {
       }
     })
   }
+  return printed
 }

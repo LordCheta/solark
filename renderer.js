@@ -7,7 +7,12 @@ const { ipcRenderer } = require('electron')
 
 let printReportToPdf = () => {
   ipcRenderer.send('print-to-pdf')
+
 }
+
+ipcRenderer.on('pdf-printed', (event, arg) => {
+  alert(arg)
+})
 
 printReport.addEventListener('click', printReportToPdf)
 
