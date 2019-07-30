@@ -12,7 +12,7 @@ module.exports = class Solark {
       this.totalAppliancePower += appliance.power;
       this.totalApplianceEnergy += appliance.energy;
     });
-    this.consumerEnergyDemand = Number((this.totalApplianceEnergy / 1).toFixed(2));
+    this.consumerEnergyDemand = Number(((this.totalApplianceEnergy / 0.95) + (this.totalAppliancePower * 0.01 * 24)).toFixed(2));
     this.inverterPowerRating = Number(((4 / 3) * this.totalAppliancePower).toFixed(2));
   }
   calulateBatteryParameters (depthOfDischarge, autonomousDays, unitBatteryCapacity, unitBatteryVoltage) {
@@ -44,7 +44,7 @@ module.exports = class Solark {
   }
   generateReport () {
     return {
-      totalApplianceEnergy : this.totalApplianceEnergy,
+      totalApplianceEnergy : this.totalApplianceEnergy.toFixed(2),
       consumerEnergyDemand : this.consumerEnergyDemand,
       totalAppliancePower : this.totalAppliancePower,
       inverterPowerRating : this.inverterPowerRating,
