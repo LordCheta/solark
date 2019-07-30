@@ -1,5 +1,5 @@
 // imports
-let { getAppliances, Appliance, deleteAppliance, getAppliance, updateApplianceParams } = require('../models/applianceModel') 
+let { getAppliances, Appliance, deleteAppliance, getAppliance, updateApplianceParams } = require('../models/applianceModel')
 
 // DOM elements
 let applianceForm = document.querySelector('#applianceForm');
@@ -12,7 +12,8 @@ let ratingUnit = document.querySelector('#ratingUnit')
 let hourOfUsage = document.querySelector('#hourOfUsage')
 let powerFactor = document.querySelector('#powerFactor')
 let addAppliance = document.querySelector('#addAppliance')
-let updateAppliance =document.querySelector('#updateAppliance')
+let updateAppliance = document.querySelector('#updateAppliance')
+let resetBtn = document.querySelector('#resetFields')
 
 // method to get form input values
 const getApplianceParams = e => {
@@ -55,7 +56,7 @@ let newAppliance  = new Appliance(nA.applianceName, nA.applianceQty, nA.applianc
 applianceViewUl.addEventListener('click', e => {
     if(e.target.matches("button.editAppliance")){
         let applianceId = e.target.parentNode.querySelector('input').value
-        
+
         let applianceToEdit = getAppliance(applianceId)
 
         addAppliance.style.display = "none"
@@ -74,7 +75,7 @@ applianceViewUl.addEventListener('click', e => {
         deleteAppliance(applianceId)
         renderAplliancesToList()
         alert('Appliance removed')
-        
+
     }
 })
 
@@ -94,4 +95,9 @@ updateAppliance.addEventListener('click', e => {
     addAppliance.style.display = "block"
     updateAppliance.style.display = "none"
     renderAplliancesToList()
+})
+
+resetBtn.addEventListener('click', () => {
+    addAppliance.style.display = "block"
+    updateAppliance.style.display = "none"
 })
