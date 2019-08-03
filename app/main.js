@@ -5,7 +5,7 @@ const fs = require('fs')
 
 
 
-require('electron-reload')(__dirname)
+// require('electron-reload')(__dirname)
 
 
 const app = electron.app; //Module to create native browser window
@@ -24,7 +24,8 @@ let createSplashWindow = () => {
     resizable: false,
     backgroundColor: '#339933',
     alwaysOnTop: true,
-    show: false
+    show: false,
+    icon: path.join(__dirname, '/icons/60x60.png')
   });
 
   splashWindow.loadURL(url.format({
@@ -40,62 +41,6 @@ let createSplashWindow = () => {
     createWindow()
   })
 }
-
-
-
-
-// Menu Template definition
-// let template = [{
-//   label: 'Debug',
-//   submenu: [
-//     {
-//       label: 'Toggle Developer Tools',
-//       accelerator: (function () {
-//         if (process.platform === 'darwin') {
-//           return 'Alt+Command+I'
-//         } else {
-//           return 'Ctrl+Shift+I'
-//         }
-//       })(),
-//       click: function (item, focusedWindow) {
-//         if (focusedWindow) {
-//           focusedWindow.toggleDevTools()
-//         }
-//       }
-//     }
-//   ]
-// },
-//   {
-//   label: 'Power',
-//   submenu: [{
-//     label: 'Sleep'
-//   }, 
-//   {
-//     label: 'Shut Down'
-//   }]
-// }, {
-//   label: 'About',
-//   submenu: [{
-//     label: 'Version'
-//   }, {
-//     label: 'Check for Update'
-//   }]
-// }]
-
-// Snippet to take care of Mac menu behaviour
-// if (process.platform === 'darwin') {
-//   const name = electron.app.getName()
-//   template.unshift({
-//     label: name,
-//     submenu: [{
-//       label: 'Quit',
-//       accelerator: 'Command+Q',
-//       click: function () {
-//         app.quit()
-//       }
-//     }]
-//   })
-// }
 
 const BrowserWindow = electron.BrowserWindow;
 
@@ -114,7 +59,7 @@ let createWindow = () => {
         slashes: true
     }))
 
-    mainWindow.webContents.toggleDevTools();
+    // mainWindow.webContents.toggleDevTools();
 
   
 
@@ -163,7 +108,7 @@ app.on('window-all-closed', function () {
 
   //SPLASH WINDOW: REQUEST FOR VERSION
 ipcMain.on('get-version', event => {
-  console.log('app version: ', app.getVersion())
+  // console.log('app version: ', app.getVersion())
   event.sender.send('set-version', app.getVersion())
 })
 
